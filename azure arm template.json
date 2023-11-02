@@ -1,0 +1,89 @@
+{
+    "name": "testing",
+    "id": "/subscriptions/a6eeaaa7-bbe1-49f0-94fe-7e25ac2913bd/resourceGroups/RGFORDEVOPS/providers/Microsoft.Compute/virtualMachines/testing",
+    "type": "Microsoft.Compute/virtualMachines",
+    "location": "centralindia",
+    "tags": {
+        "created": "12/10/2023"
+    },
+    "properties": {
+        "hardwareProfile": {
+            "vmSize": "Standard_DS1_v2"
+        },
+        "provisioningState": "Succeeded",
+        "vmId": "2ad3d4e3-6427-4417-a4cf-d9ffba99a0ef",
+        "storageProfile": {
+            "imageReference": {
+                "publisher": "MicrosoftWindowsDesktop",
+                "offer": "Windows-10",
+                "sku": "win10-22h2-pro-g2",
+                "version": "latest",
+                "exactVersion": "19045.3570.231001"
+            },
+            "osDisk": {
+                "osType": "Windows",
+                "name": "testing_disk1_443d017d11ed4024beaebf62252174d8",
+                "createOption": "FromImage",
+                "caching": "ReadWrite",
+                "managedDisk": {
+                    "storageAccountType": "StandardSSD_LRS",
+                    "id": "/subscriptions/a6eeaaa7-bbe1-49f0-94fe-7e25ac2913bd/resourceGroups/RGFORDEVOPS/providers/Microsoft.Compute/disks/testing_disk1_443d017d11ed4024beaebf62252174d8"
+                },
+                "deleteOption": "Delete",
+                "diskSizeGB": 127
+            },
+            "dataDisks": []
+        },
+        "osProfile": {
+            "computerName": "testing",
+            "adminUsername": "azureuser",
+            "windowsConfiguration": {
+                "provisionVMAgent": true,
+                "enableAutomaticUpdates": false,
+                "patchSettings": {
+                    "patchMode": "Manual",
+                    "assessmentMode": "ImageDefault",
+                    "enableHotpatching": false
+                }
+            },
+            "secrets": [],
+            "allowExtensionOperations": true,
+            "requireGuestProvisionSignal": true
+        },
+        "networkProfile": {
+            "networkInterfaces": [
+                {
+                    "id": "/subscriptions/a6eeaaa7-bbe1-49f0-94fe-7e25ac2913bd/resourceGroups/rgfordevops/providers/Microsoft.Network/networkInterfaces/testing577",
+                    "properties": {
+                        "deleteOption": "Detach"
+                    }
+                }
+            ]
+        },
+        "diagnosticsProfile": {
+            "bootDiagnostics": {
+                "enabled": true
+            }
+        },
+        "licenseType": "Windows_Client"
+    },
+    "resources": [
+        {
+            "name": "MicrosoftMonitoringAgent",
+            "id": "/subscriptions/a6eeaaa7-bbe1-49f0-94fe-7e25ac2913bd/resourceGroups/RGFORDEVOPS/providers/Microsoft.Compute/virtualMachines/testing/extensions/MicrosoftMonitoringAgent",
+            "type": "Microsoft.Compute/virtualMachines/extensions",
+            "location": "centralindia",
+            "properties": {
+                "autoUpgradeMinorVersion": true,
+                "provisioningState": "Succeeded",
+                "enableAutomaticUpgrade": false,
+                "publisher": "Microsoft.EnterpriseCloud.Monitoring",
+                "type": "MicrosoftMonitoringAgent",
+                "typeHandlerVersion": "1.0",
+                "settings": {
+                    "workspaceId": "212f27f6-c630-47fa-b26e-d6d6dc82319f"
+                }
+            }
+        }
+    ]
+}
